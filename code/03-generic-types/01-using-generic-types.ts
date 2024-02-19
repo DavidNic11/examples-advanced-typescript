@@ -30,14 +30,6 @@ function objectify<Input>(input: Input): { value: Input } {
 const withAValue = objectify<number>(4);
 const withInference = objectify("4");
 
-// inference all the way
-// const number = transform("123", (str) => parseInt(str, 10));
-
-// explicitly passing type arguments
-// const object = transform<string, { value: string }>("123", (str) => ({
-//   value: true,
-// }));
-
 // But Wait that doesn't do anything with the type!
 
 const greet = <ThingToGreet>(thing: ThingToGreet): void => {

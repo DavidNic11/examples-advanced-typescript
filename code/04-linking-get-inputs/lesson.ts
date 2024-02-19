@@ -1,6 +1,6 @@
 get("/users", ({ params }) => {});
 
-get("/users", ({ params }) => {});
+get("/users/:id", ({ params }) => {});
 
 declare function get(path: string, handler: RequestHandler): void;
 
