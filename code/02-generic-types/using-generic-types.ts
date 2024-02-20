@@ -32,12 +32,10 @@ const withInference = objectify("4");
 
 // But Wait that doesn't do anything with the type!
 
-const greet = <ThingToGreet extends { name: string }>(
-  thing: ThingToGreet
-): void => {
+const greet = <ThingToGreet>(thing: ThingToGreet): void => {
   console.log("Hello there", thing.name);
 };
 
-greet({ name: "Arthur", isCool: true });
+greet({ person: "Arthur" });
 
 export {};

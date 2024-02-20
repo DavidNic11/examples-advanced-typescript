@@ -22,11 +22,9 @@ type RequestHandler<Path extends string> = (
 // can only be string or undefined
 /****************************************/
 
-type RequestObject<Path extends string> = { params: GetParams<Path> };
+type RequestObject<Path extends string> = { params: Path };
 
-type GetParams<Path extends string> = {
-  [Param in PathParameters<Path>]: string | undefined;
-};
+type GetParams<Path extends string> = never;
 
 type PathParameters<Path extends string> = GetDevFriendlyParams<
   SplitPath<Path>
