@@ -3,7 +3,10 @@
  * Given ":org" | "project" | ":id" return "org" | "id"
  */
 
-type GetDevFriendlyParams<Path> = never;
+type GetDevFriendlyParams<Path> = Path extends `:${infer Param}`
+  ? Param
+  : never;
+
 type Id = GetDevFriendlyParams<"user" | "project" | ":id">;
 type IdOrOrg = GetDevFriendlyParams<":org" | "project" | ":id">;
 

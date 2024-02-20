@@ -2,10 +2,15 @@ get("/users", ({ params }) => {});
 
 get("/users/:id", ({ params }) => {});
 
-declare function get(path: string, handler: RequestHandler): void;
+declare function get<Path extends string>(
+  path: Path,
+  handler: RequestHandler<Path>
+): void;
 
-type RequestObject = { params: Record<string, string> };
+type RequestObject<Path extends string> = { params: Path };
 
-type RequestHandler = (request: RequestObject) => void;
+type RequestHandler<Path extends string> = (
+  request: RequestObject<Path>
+) => void;
 
 export {};

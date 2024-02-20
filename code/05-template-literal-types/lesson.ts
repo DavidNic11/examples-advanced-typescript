@@ -2,9 +2,9 @@
  * You can also use them to enforce some string shape matching
  */
 
-type Hyphenated = never;
+type Hyphenated = `${string}-${string}`;
 
-const str: Hyphenated = "no hyphen";
+const str: Hyphenated = "no-hyphen";
 const str2: Hyphenated = "with-hyphen";
 const str3: Hyphenated = "with-more-than-one";
 
@@ -12,7 +12,9 @@ const str3: Hyphenated = "with-more-than-one";
  * Let's look at an example with a function
  */
 
-declare function stripLeadingSlash<Path extends string>(string: Path): Path;
+declare function stripLeadingSlash<Path extends string>(
+  string: `/${Path}` | Path
+): Path;
 
 let user = stripLeadingSlash("/user");
 user = "user";

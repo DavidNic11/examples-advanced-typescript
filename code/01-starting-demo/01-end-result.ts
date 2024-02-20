@@ -1,4 +1,4 @@
-get("/user/:id/:orgId", ({ params }) => {
+get("/user/:orgId", ({ params }) => {
   params.id;
 });
 
