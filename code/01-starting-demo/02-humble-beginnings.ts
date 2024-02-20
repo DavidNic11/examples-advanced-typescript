@@ -1,7 +1,7 @@
 get("/projects/", ({ params }) => {});
 
-get("/users/:id", ({ params }) => {
-  params.moo;
+get("/users/:orgId", ({ params }) => {
+  params.id;
 });
 
 get("/users", ({ params }) => {});
