@@ -1,6 +1,6 @@
 get("/projects/", ({ params }) => {});
 
-get("/users/:orgId", ({ params }) => {
+get("/users/:id", ({ params }) => {
   params.id;
 });
 
