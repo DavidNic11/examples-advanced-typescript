@@ -4,7 +4,7 @@
 
 type Hyphenated = never;
 
-const str: Hyphenated = "no-hyphen";
+const str: Hyphenated = "no hyphen";
 const str2: Hyphenated = "with-hyphen";
 const str3: Hyphenated = "with-more-than-one";
 
